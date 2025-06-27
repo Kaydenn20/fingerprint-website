@@ -1,0 +1,101 @@
+.footer-medical {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  color: #0077b6;
+  padding: 2.5rem 1rem 1rem 1rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -2px 16px rgba(0, 119, 182, 0.08);
+  margin-top: 3rem;
+}
+
+.footer-content-medical {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section-medical {
+  flex: 1 1 250px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 119, 182, 0.06);
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section-medical h3 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-section-medical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section-medical ul li {
+  color: #333;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+}
+
+.social-links-medical {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.newsletter-form-medical {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form-medical input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #b2ebf2;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.newsletter-form-medical button {
+  background: linear-gradient(90deg, #00b4d8 0%, #48cae4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.newsletter-form-medical button:hover {
+  background: linear-gradient(90deg, #48cae4 0%, #00b4d8 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.footer-bottom-medical {
+  text-align: center;
+  margin-top: 2rem;
+  color: #0077b6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 800px) {
+  .footer-content-medical {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-section-medical {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+} 
