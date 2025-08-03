@@ -14,19 +14,10 @@ import base64
 import io
 import datetime
 
-app = Flask(__name__)
-# Configure CORS to allow requests from your frontend
-CORS(app, resources={
-    r"/predict": {
-        "origins": ["http://localhost:5173", "http://127.0.0.1:5173", "*"],
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
 
 # Load the trained model
 # Make sure 'model.keras' is the correct path to your saved ResNet model
-model = load_model("model.resnet.keras")
+model = load_model("model.resnet.zip")
 
 # Define the labels based on your Resnet.ipynb notebook
 # This maps the model's output index to the blood group label
