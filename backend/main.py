@@ -13,11 +13,27 @@ import os
 import base64
 import io
 import datetime
+import logging
 
+import os
+import requests
 
-# Load the trained model
-# Make sure 'model.keras' is the correct path to your saved ResNet model
-model = load_model("model.resnet.zip")
+# Model configuration
+MODEL_PATH = "model.resnet.keras"
+GDRIVE_ID = "1tAGzx7YHK6PWFtXUYbYGD6HLePp7kdJR"
+
+def download_model():
+    if not os.path.exists(MODEL_PATH):
+        print("Model file not found. Downloading from Google Drive...")
+        import gdown
+        url = f"https://drive.google.com/uc?id={GDRIVE_ID}"
+        gdown.download(url, MODEL_PATH, quiet=False)
+        print("Model downloaded.")
+
+download_model()
+
+from tensorflow.keras.models import load_model
+model = load_model(MODEL_PATH)
 
 # Define the labels based on your Resnet.ipynb notebook
 # This maps the model's output index to the blood group label
@@ -196,6 +212,11 @@ def is_likely_fingerprint(image_array):
     except Exception as e:
         print(f"Error in fingerprint validation: {e}")
         return False, {}
+    
+    # ...existing code...
+app = Flask(__name__)
+CORS(app)
+# ...existing code...
 
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 # Apply cross_origin decorator for CORS handling
